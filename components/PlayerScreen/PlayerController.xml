@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="PlayerController" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <script type="text/brightscript" uri="pkg:/components/common/DeviceInfo.brs" />
+
+    <script type="text/brightscript"
+        uri="pkg:/components/PlayerScreen/PlayerController.brs" />
+    <interface>
+        <field type="integer" id="duration" value="100" onChange="setDuration" />
+
+        <field type="integer" id="position" value="0" onChange="seekTo" />
+
+        <field type="integer" id="secondaryProgress" value="0"
+            onChange="setSecondaryProgress" />
+
+        <field type="string" id="channel_name" alias="ChannelName.text" />
+        <field type="string" id="channel_number" alias="ChannelNumber.text" />
+        <field type="string" id="current_start_time" alias="StartTime.text" />
+        <field type="string" id="current_title" alias="Title.text" />
+        <field type="string" id="current_duration" alias="Duration.text" />
+        <field type="string" id="current_rating" alias="Rating.text" />
+        <field type="string" id="next_start_time" alias="NextStartTime.text" />
+        <field type="string" id="next_title" alias="NextTitle.text" />
+        <field type="bool" id="next_layout_visible" alias="Next_Layout.visible" />
+        <field type="bool" id="current_duration_visible" alias="Duration.visible" />
+        <field type="float" id="seekbar_width" alias="SeekBar.width" />
+    </interface>
+
+    <children>
+        <!-- tip -->
+        <!-- <Label id="OKTip" width="0" height="48" translation="[93,45]"
+            text="Press &quot;OK&quot; to view the channel list" maxLines="1" ellipsisText="..."
+            color="0xFFFFFF" horizAlign="center"> <Font role="font" size="42" uri="pkg:/fonts/Roboto-Regular.ttf"
+            /> </Label> -->
+        <Rectangle id="OKTip" width="620" height="100"
+            translation="[99.0,46.0]" color="0x000000FF" opacity="0.69">
+            <Label width="100" height="30" translation="[35.0,30.0]"
+                text="Press" color="0xC2C2C2FF">
+                <Font role="font" size="36"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+            <Poster width="70" height="70" translation="[140.0,15.0]"
+                uri="pkg:/images/user_guidelines_ok.png">
+            </Poster>
+            <Label translation="[225.0,30.0]" text="to view more channels" color="0xC2C2C2FF">
+                <Font role="font" size="36"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+        </Rectangle>
+
+        <!-- channel information -->
+        <Poster id="ChannelNameBg" height="69"
+            uri="pkg:/images/home_screen_channel_name_bg.9.png" visible="false" />
+
+        <Poster id="ChannelNumberBg" height="69" opacity="0.8"
+            uri="pkg:/images/home_screen_channel_number_bg.9.png"
+            visible="false" />
+
+        <Label id="ChannelName" width="0" height="48" translation="[1740,45]"
+            maxLines="1" ellipsisText="..." color="0xFFFFFF" horizAlign="center">
+            <Font role="font" size="42" uri="pkg:/fonts/Roboto-Regular.ttf" />
+        </Label>
+
+        <Label id="ChannelNumber" height="48" translation="[1821,45]"
+            maxLines="1" ellipsisText="..." color="0x333333" horizAlign="center">
+            <Font role="font" size="42" uri="pkg:/fonts/Roboto-Regular.ttf" />
+        </Label>
+
+        <!-- bottom panel -->
+        <Poster width="1920" height="459" translation="[0,621]"
+            uri="pkg:/images/player_bottom_panel_bg.png" />
+
+        <Rectangle id="BottomPanel" width="1920" height="459"
+            translation="[0,621]" color="#00000000">
+            <!-- now playing -->
+            <Rectangle width="3" height="159" color="#D8D8D8"
+                translation="[93,195]" opacity="0.2" />
+
+            <!-- current play -->
+            <LayoutGroup translation="[108,195]"
+                layoutDirection="vert">
+                <Label id="StartTime" width="300" height="42"
+                    translation="[0,0]" maxLines="1" ellipsisText="..."
+                    color="0xffffff">
+                    <Font role="font" size="36"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+                </Label>
+
+                <Label id="Title" width="0" height="57"
+                    translation="[0,51]" maxLines="1" ellipsisText="..."
+                    color="0xffffff">
+                    <Font role="font" size="51"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+                </Label>
+
+                <Label id="Duration" width="300" height="42"
+                    translation="[0,120]" maxLines="1" ellipsisText="..."
+                    color="0xffffff">
+                    <Font role="font" size="36"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+                </Label>
+            </LayoutGroup>
+
+            <!-- rating -->
+            <Group id="Rating_Layout" translation="[108,249]">
+                <Poster id="RatingBackgroundPoster" height="39"
+                    uri="pkg:/images/home_screen_channel_level_bg.9.png">
+                </Poster>
+                <Label id="Rating" height="33" maxLines="1"
+                    ellipsisText="..." color="0xffffff" horizAlign="center"
+                    vertAlign="center">
+                    <Font role="font" size="27"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+                </Label>
+            </Group>
+
+            <!-- next play -->
+            <Group id="Next_Layout" translation="[1329,249]">
+                <Rectangle width="3" height="102" color="#D8D8D8"
+                    opacity="0.2" />
+
+                <LayoutGroup layoutDirection="vert"
+                    translation="[18,0]">
+                    <Label id="NextStartTime" width="250" height="36"
+                        maxLines="1" ellipsisText="..." color="0xffffff">
+                        <Font role="font" size="36"
+                            uri="pkg:/fonts/Roboto-Regular.ttf" />
+                    </Label>
+
+                    <Label id="NextTitle" width="443" height="36"
+                        maxLines="1" ellipsisText="..." color="0xffffff">
+                        <Font role="font" size="51"
+                            uri="pkg:/fonts/Roboto-Regular.ttf" />
+                    </Label>
+                </LayoutGroup>
+
+                <Rectangle width="498" height="6" color="#F1F1F1"
+                    translation="[0,102]" opacity="0.3" />
+            </Group>
+
+            <!-- SeekBar -->
+            <SeekBar id="SeekBar" translation="[93,351]" />
+        </Rectangle>
+
+    </children>
+
+</component>

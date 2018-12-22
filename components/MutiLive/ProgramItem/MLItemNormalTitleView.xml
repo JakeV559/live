@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLItemNormalTitleView" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <!-- Replay -->
+
+    <script type="text/brightscript"
+        uri="pkg:/components/MutiLive/ProgramItem/MLItemNormalTitleView.brs" />
+
+    <children>
+        <Poster width="98" height="42" loadDisplayMode="scaleToFill"
+            uri="pkg:/images/MutilLive_TitleIcon.png">
+            <Label id="mlTitleLabel" width="98" height="42"
+                horizAlign="center" vertAlign="center" color="0xF1F1F1FF">
+                <Font role="font" size="27"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+        </Poster>
+    </children>
+</component>

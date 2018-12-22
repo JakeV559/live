@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SetTask" extends="Task" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface >
+        <field id = "contentString" type = "string" />
+        <field id = "readType" type = "string" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/Setting/SetTask.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+
+</component>

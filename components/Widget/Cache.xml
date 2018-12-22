@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Cache" extends="Task"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+    <!-- 1、If want to cache the field,you must add prefix "Cached_" to id attribute.
+            Example: <field type="string" id="Cached_UserGuidelinesTimes" />
+            Set value to "" to remove cache.
+         2、Type must be string.
+         3、You can get/set data by dot syntax.
+    -->
+        <field type="string" id="Cached_userNeedChangeChannelGuidelines" />
+        <field type="string" id="Cached_userNeedDownKeyGuidelines" />
+        <field type="string" id="Cached_userNeedOKTip" />
+        <field type="string" id="Cached_version"/>
+        <field type="string" id="Cached_installID"/>
+        <!-- save the id of the channel last watched -->
+        <field type="string" id="Cached_lastWatchedChannelId"/>
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/Widget/Cache.brs" />
+</component>

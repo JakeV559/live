@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLItemLiveSelectedTitleView" extends="Group"
+	xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+	<children>
+		<Poster width="348" height="69"
+			uri="pkg:/images/home_screen_channel_des_focused_bg.png">
+			<ScrollingLabel id="mlItemLiveSelecteLabel"
+				translation="[12,5]" maxWidth="246" height="0" horizAlign="left"
+				vertAlign="center" repeatCount="-1" color="0xFFFFFFFF" font="font:SmallBoldSystemFont" />
+				
+			<Rectangle id="mlItemRateBackground" translation="[258,18]"
+				width="78" height="33" color="0x00000000">
+				<Label id="mlItemRateLabel" translation="[0,0]" width="78"
+					height="33" horizAlign="center" vertAlign="center" color="0xFFFFFFFF"
+					opacity="0.2" font="font:SmallBoldSystemFont" />
+			</Rectangle>
+		</Poster>
+	</children>
+</component>

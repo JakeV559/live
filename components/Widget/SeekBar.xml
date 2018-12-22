@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SeekBar -->
+<component name="SeekBar" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <script type="text/brightscript" uri="pkg:/components/Widget/SeekBar.brs" />
+
+    <interface>
+        <!-- the seekbar's width, default is 1200 -->
+        <field type="float" id="width" value="1200"
+            alias="SeekBarBackground.width" onChange="setWidth" />
+
+        <!-- the seekbar's height, default is 6 -->
+        <field type="float" id="height" value="6"
+            alias="SeekBarBackground.height" onChange="setHeight" />
+
+        <!-- the seekbar's background color -->
+        <field type="color" id="background" alias="SeekBarBackground.color"
+            value="#F1F1F1" onChange="setBackground" />
+
+        <!-- the seekbar's progress color -->
+        <field type="color" id="foreground" alias="SeekBarForeground.color"
+            value="#C9C9C9" onChange="setForeground" />
+
+        <!-- the seekbar's secondaryprogress color -->
+        <field type="color" id="secondaryground" alias="SeekBarSecondaryground.color"
+            value="#C9C9C9" onChange="setSecondaryground" />
+
+        <!-- the seekbar slider's thumbnail -->
+        <field type="uri" id="thumbnail" alias="Slider.uri"
+            value="pkg:/images/player_seek_bar.png" onChange="setThumbnail" />
+
+        <!-- the max progress, default is 100 -->
+        <field type="integer" id="maxProgress" value="100"
+            onChange="setMaxProgress" />
+
+        <!-- the current progress, default is 0 -->
+        <field type="integer" id="progress" value="0" onChange="setProgress" />
+
+        <!-- the secondary progress, default is 0 -->
+        <field type="integer" id="secondaryProgress" value="0"
+            onChange="setSecondaryProgress" />
+
+    </interface>
+
+    <children>
+        <!-- the seekbar's background -->
+        <Rectangle id="SeekBarBackground" opacity="0.3"
+            translation="[0.0,3]" />
+
+        <!-- the seekbar's secondary progress color -->
+        <Rectangle id="SeekBarSecondaryground" height="6"
+            translation="[0.0,3]" />
+
+        <!-- the seekbar's progress color -->
+        <Rectangle id="SeekBarForeground" height="6"
+            translation="[0.0,3]" />
+
+        <!-- the seekbar's slider -->
+        <Poster id="Slider" width="12" height="12" translation="[0,0]" />
+
+        <!-- slider animation -->
+        <Animation id="SliderAnim" repeat="false"
+            easeFunction="linear">
+            <Vector2DFieldInterpolator id="SliderInterp"
+                fieldToInterp="Slider.translation" key="[ 0.0, 1.0 ]" />
+        </Animation>
+
+        <!-- secondary progress animation -->
+        <Animation id="SecondaryProgressAnim" repeat="false"
+            easeFunction="linear">
+            <FloatFieldInterpolator id="SecondaryProgressInterp"
+                fieldToInterp="SeekBarSecondaryground.width" key="[ 0.0, 1.0 ]" />
+        </Animation>
+
+        <!-- progress animation -->
+        <Animation id="ProgressAnim" repeat="false"
+            easeFunction="linear">
+            <FloatFieldInterpolator id="ProgressInterp"
+                fieldToInterp="SeekBarForeground.width" key="[ 0.0, 1.0 ]" />
+        </Animation>
+
+        <!-- fastforward animation -->
+        <Animation id="FastforwardAnim" repeat="false"
+            easeFunction="linear" duration=".1">
+            <FloatFieldInterpolator id="FastforwardInterp"
+                fieldToInterp="SeekBarForeground.width" key="[ 0.0, 1.0 ]"
+                keyValue="[ 0, 1200 ]" />
+        </Animation>
+
+        <!-- rewind animation -->
+        <Animation id="RewindAnim" repeat="false"
+            easeFunction="linear" duration=".1">
+            <FloatFieldInterpolator id="RewindInterp"
+                fieldToInterp="SeekBarForeground.width" key="[ 0.0, 1.0 ]"
+                keyValue="[ 1200, 0 ]" />
+        </Animation>
+    </children>
+
+</component>

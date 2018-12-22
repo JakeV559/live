@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+
+    <children>
+        <PlayerScreen id="PlayerScreen" visible="true"
+            translation="[0,0]" />
+    </children>
+</component>

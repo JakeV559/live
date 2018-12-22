@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="LikeListItem" extends="Group">
+
+<interface>
+    <field id="itemContent" type="node" onChange="likeListChanged" />
+</interface>
+
+<script type="text/brightscript" uri="pkg:/components/LogoutScreen/LikeListItem.brs" />
+
+<children>
+    <!-- Channel Poster -->
+    <Poster
+        id="channelPoster"
+        width="519"
+        height="291"
+        loadDisplayMode="scaleToZoom"/>
+
+    <!-- Channel Cover -->
+    <Rectangle
+        id="channelCover"
+        width="519"
+        height="291"
+        color="0x00000066"/>
+
+    <!-- Channel Name And Channel Num -->
+    <Poster
+        id="channelNameBg"
+        translation="[9, 9]"
+        height="45"
+        uri="pkg:/images/home_screen_channel_name_bg.9.png"/>
+
+    <Poster
+        id="channelNumBg"
+        height="45"
+        opacity="0.8"
+        uri="pkg:/images/home_screen_channel_number_bg_small.9.png" />
+
+    <Label
+        id="channelNameHelp"
+        translation="[21, 21]"
+        maxLines="1"
+        ellipsisText="..."
+        height="24"
+        color="0xffffffff"
+        horizAlign="left"
+        vertAlign="center"
+        visible="false">
+            <Font
+                role="font"
+                size="27"
+                uri="pkg:/fonts/Roboto-Regular.ttf" />
+    </Label>
+
+    <ScrollingLabel
+        id="channelName"
+        translation="[21, 21]"
+        height="24"
+        color="0xffffffff"
+        repeatCount="0"
+        horizAlign="left"
+        vertAlign="center">
+            <Font
+                role="font"
+                size="27"
+                uri="pkg:/fonts/Roboto-Regular.ttf" />
+    </ScrollingLabel>
+
+    <Label
+        id="channelNum"
+        height="24"
+        maxLines="1"
+        ellipsisText="..."
+        color="0x333333ff"
+        horizAlign="center"
+        vertAlign="center">
+            <Font
+                role="font"
+                size="27"
+                uri="pkg:/fonts/Roboto-Regular.ttf" />
+    </Label>
+
+    <Poster
+        id="channelCommonStatusCont"
+        width="105"
+        height="36"
+        opacity="0.7"
+        uri="pkg:/images/home_screen_status_replay_bg.png">
+            <Label
+                id="channelCommonStatus"
+                translation="[12, 5]"
+                width="81"
+                height="27"
+                opacity="0.6"
+                text="Replay"
+                color="0xffffffff"
+                horizAlign="center"
+                vertAlign="center">
+                    <Font
+                        role="font"
+                        size="27"
+                        uri="pkg:/fonts/Roboto-Light.ttf" />
+            </Label>
+    </Poster>
+
+   <Poster
+        visible="false"
+        id="channelLiveStatus"
+        width="90"
+        height="36"
+        opacity="0.7"
+        uri="pkg:/images/home_screen_channel_live_status.png" />
+
+    <!-- Channel Description -->
+    <Poster
+        id="channelDesCont"
+        height="51"
+        opacity="0.8"
+        uri="pkg:/images/home_screen_channel_des_focused_bg.png">
+           <Label
+                id="channelDesHelp"
+                translation="[9, 9]"
+                maxLines="1"
+                ellipsisText="..."
+                height="36"
+                color="0xffffffff"
+                horizAlign="left"
+                vertAlign="center"
+                visible="false">
+                    <Font
+                        role="font"
+                        size="36"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+            <ScrollingLabel
+                id="channelDes"
+                translation="[9, 9]"
+                height="36"
+                color="0xffffffff"
+                horizAlign="left"
+                vertAlign="center">
+                    <Font
+                        role="font"
+                        size="36"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </ScrollingLabel>
+    </Poster>
+
+    <!-- Channel Playing Icon -->
+    <Poster
+        visible="false"
+        id="channelPlayingIcon"
+        width="27"
+        height="24"
+        uri="pkg:/images/channel_living_gif.gif" />
+
+    <!-- Channel Level -->
+    <Poster
+        id="channelLevelCont"
+        height="33"
+        uri="pkg:/images/home_screen_channel_level_bg.9.png"
+        visible="false">
+            <Label
+                id="channelLevelHelp"
+                translation="[12, 6]"
+                height="24"
+                color="0xffffffff"
+                horizAlign="center"
+                vertAlign="center"
+                visible="false">
+                    <Font
+                        role="font"
+                        size="24"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+            <Label
+                id="channelLevel"
+                translation="[12, 6]"
+                height="24"
+                color="0xffffffff"
+                horizAlign="center"
+                vertAlign="center">
+                    <Font
+                        role="font"
+                        size="24"
+                        uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+    </Poster>
+</children>
+</component>

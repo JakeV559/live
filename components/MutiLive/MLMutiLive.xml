@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLMutiLive" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <script type="text/brightscript" uri="pkg:/components/MutiLive/MLMutiLive.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/TimeUtils.brs" />
+
+    <interface>
+        <field id="mutiLiveSelectedNode" type="node" />
+        <field id="curProgram" type="assocarray" />
+        <field id="channelID" type="string" />
+        <field id="mutiliveContentNode" type="node" />
+        <field id="reloadDataFlag" type="boolean" />
+        <field id="inTenMinsFlag" type="boolean" />
+    </interface>
+
+    <children>
+        <Poster id="MLBottomBar" translation="[0,0]" width="1920"
+            height="900" opacity="1"
+            uri="pkg:/images/player_bottom_panel_bg.png">
+        </Poster>
+        <Label id="MLMainTitle" translation="[60,435]" height="30" width="300"
+            horizAlign="left" color="0xF1F1F1FF" font="font:SmallBoldSystemFont">
+            <Font role="font" size="30" uri="pkg:/fonts/Roboto-Regular.ttf" />
+        </Label>
+        <RowList id="MLLiveRowList" itemComponentName="MLLiveRowListItems"
+            translation="[0,30]" numRows="1" rowItemSize="[[360,300]]"
+            rowItemSpacing="[[0,0]]" itemSize="[1920,300]"
+            rowFocusAnimationStyle="floatingFocus" drawFocusFeedback="false">
+        </RowList>
+
+        <RowList id="MLProgramRowList" itemComponentName="MLProgramRowListItems"
+            translation="[0,465]" numRows="1" rowItemSize="[[360,472]]"
+            rowItemSpacing="[[0,0]]" itemSize="[1920,472]"
+            rowFocusAnimationStyle="floatingFocus" drawFocusFeedback="false"
+            focusBitmapUri="pkg:/images/home_screen_indicator_bitmap.9.png"
+            >
+        </RowList>
+    </children>
+</component>

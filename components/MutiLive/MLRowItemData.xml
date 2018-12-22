@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLRowItemData" extends="ContentNode">
+    <interface>
+        <field id="programsItemID" type="string" />
+        <field id="playTime" type="string" />
+        <field id="endTime" type="string" />
+        <field id="playTimeinMills" type="string" />
+        <field id="endTimeinMills" type="string" />
+        <field id="duration" type="integer" />
+        <field id="viewPic" type="string" />
+        <field id="programType" type="integer" />
+
+        <field id="vid" type="string" />
+        <field id="categoryID" type="string" />
+        <field id="aid" type="integer" />
+        <field id="title" type="string" />
+        <field id="contentRating" type="string" />
+
+        <field id="showLabelFlag" type="Boolean" />
+        <field id="livingStateType" type="integer" />
+        <field id="showMutiLiveFlag" type="Boolean" />
+    </interface>
+</component>

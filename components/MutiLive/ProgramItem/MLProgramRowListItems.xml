@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLProgramRowListItems" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+        <field id="itemContent" type="node" onChange="itemContentChanged" />
+        <field id="height" type="float" onChange="updateLayout" />
+        <field id="width" type="float" onChange="updateLayout" />
+        <field id="focusPercent" type="float" onChange="focusPercentChanged" />
+        <field id="rowListHasFocus" type="bool" onChange="focusPercentChanged" />
+        <field id="showIndex" type="integer" />
+    </interface>
+
+    <script type="text/brightscript"
+        uri="pkg:/components/MutiLive/ProgramItem/MLProgramRowListItems.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/TimeUtils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/GeneralUtils.brs" />
+
+    <children>
+        <Group id="totalItemOverlay" visible="true">
+            <Group id="itemOverlay" >
+                <Group id="mlProgramScaleGroup">
+                    <Poster id="focusPost" translation="[1,21]"
+                        width="357" height="258"
+                        uri="pkg:/images/home_screen_indicator_bitmap.9.png"
+                        visible="false">
+                    </Poster>
+                    <Poster id="mlProgramPoster" translation="[6,24]"
+                        width="348" height="195" loadWidth="348" loadHeight="195"
+                        loadDisplayMode="scaleToFill" inheritParentOpacity="false"
+                        opacity="1">
+                        <MLItemNormalTitleView id="MLItemNormalTitleView"
+                            translation="[244,6]" visible = "false"/>
+                        <MLItemLivingTitleView id="mlProgramTitleLivingPoster"
+                            translation="[244,6]" visible="false" />
+                    </Poster>
+                    <Group>
+                        <Rectangle id="mlItemProgramNormalTitleView"
+                            color="0x202027FF" translation="[6,219]" height="57"
+                            width="348" visible="false">
+                            <Label id="mlrowBottomlabel" translation="[12,12]"
+                                width="324" height="33" horizAlign="left" vertAlign="center"
+                                color="0xFFFFFFFF" opacity="0.6">
+                                <Font role="font" size="27"
+                                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+                            </Label>
+                        </Rectangle>
+                   </Group>
+
+                    <!-- coming soon tips -->
+                    <Rectangle id="mlProgramCannotPlayOverlayer"
+                        color="0x141414FF" translation="[6,24]" width="348"
+                        height="195" opacity="0.7">
+                        <Label id="mlProgramCannotPlayLabel"
+                            translation="[0,108]" width="348" height="90"
+                            horizAlign="center" opacity="0.4">
+                            <Font role="font" size="30"
+                                uri="pkg:/fonts/Roboto-Regular.ttf" />
+                        </Label>
+                    </Rectangle>
+                </Group>
+                <MLItemProgramSelectedTitleView
+                    id="mlItemProgramSelectedTitleView" translation="[6,219]">
+                </MLItemProgramSelectedTitleView>
+            </Group>
+            <!-- TimeLine -->
+            <Group>
+                <Rectangle id="mlRowTimeLineLeft" translation="[0,348]"
+                    width="165" height="2" color="0x747474FF" opacity="0.5" />
+                <Poster id="mlRowTimePost" translation="[159,332]"
+                    height="36" width="36" loadWidth="36" loadHeight="36"
+                    loadDisplayMode="scaleToFit" inheritParentOpacity="false"
+                    opacity="1" uri="pkg:/images/MutiLive_TimeLine_NOLiving.png" />
+                <Rectangle id="mlRowTimeLineRight" translation="[195,348]"
+                    width="165" height="2" color="0x747474FF" opacity="0.5" />
+                <Label id="mlRowTimeLabel" translation="[6,378]"
+                    height="38" width="348" horizAlign="center" vertAlign="center"
+                    color="0xF1F1F1FF" opacity="0.8">
+                    <Font role="font" size="27"
+                        uri="pkg:/fonts/Roboto-Light.ttf" />
+                </Label>
+            </Group>
+        </Group>
+    </children>
+</component>

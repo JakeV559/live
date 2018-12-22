@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLLiveRowListItems" extends="Group"
+	xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+	<interface>
+		<field id="itemContent" type="node" onChange="itemContentChanged" />
+		<field id="height" type="float" onChange="updateLayout" />
+		<field id="width" type="float" onChange="updateLayout" />
+		<field id="focusPercent" type="float" onChange="focusPercentChanged" />
+		<field id="rowListHasFocus" type="bool" onChange="focusPercentChanged" />
+	</interface>
+
+	<script type="text/brightscript"
+		uri="pkg:/components/MutiLive/LiveItem/MLLiveRowListItems.brs" />
+
+	<children>
+		<Group id="itemOverlay" visible="true">
+			<Group id="mlLiveScaleGroup">
+				<!-- image zone -->
+				<Poster id="mlLivePoster" translation="[6,24]" width="348" height="195"
+					loadWidth="348" loadHeight="195" loadDisplayMode="scaleToFill">
+					<MLItemNormalTitleView id="MLItemNormalTitleView"
+						translation="[244,6]" />
+					<MLItemLivingTitleView id="mlLiveTitleLivingPoster"
+						translation="[244,6]" visible="false" />
+				</Poster>
+				<!-- text zone -->
+				<Group>
+					<Rectangle id="mlItemLiveNormalTitleView" color="0x202027FF"
+						translation="[6,219]" height="57" width="348" visible="false">
+						<ScrollingLabel id="mlrowBottomlabel" translation="[12,10]"
+							maxWidth="324" horizAlign="left" vertAlign="center" repeatCount="-1"
+							color="0xFFFFFFFF" font="font:SmallBoldSystemFont" opacity="0.6" />
+					</Rectangle>
+					<MLItemLiveSelectedTitleView id="mlItemLiveSelectedTitleView"
+						translation="[6,219]">
+					</MLItemLiveSelectedTitleView>
+
+				</Group>
+				<Label id="mlLiveCannotPlayLabel" translation="[0,108]"
+					width="348" height="90" visible="false" horizAlign="center">
+				</Label>
+
+			</Group>
+		</Group>
+	</children>
+</component>

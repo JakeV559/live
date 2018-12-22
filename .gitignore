@@ -1,0 +1,14 @@
+# Mac OS
+.DS_Store
+.DS_Store?
+
+# eclipse
+.buildpath
+.project
+.settings
+out/*
+
+# zip
+*.zip
+
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="CategoryListItemData" extends="ContentNode">
+
+<interface>
+    <field id="resourceId" type="integer"/>
+    <field id="categoryId" type="string"/>
+    <field id="categoryName" type="string"/>
+    <field id="categoryMultiTitle" type="assocarray"/>
+    <field id="categoryPic" type="string"/>
+    <field id="color" type="string"/>
+    <field id="parentCgId" type="string"/>
+    <field id="dataSource" type="integer"/>
+    <field id="dataType" type="integer"/>
+    <field id="channelList" type="array"/>
+    <field id="contentManulNum" type="integer"/>
+    <field id="contentTotal" type="integer"/>
+    <field id="templateId" type="integer"/>
+    <field id="categoryOnFocusPic" type="string"/>
+    <field id="isPersonalizedSort" type="integer"/>
+    <field id="categoryLiving" type="boolean"/>
+</interface>
+
+</component>

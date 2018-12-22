@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="CategoryListItem" extends="Group">
+
+<interface>
+    <field id="itemContent" type="node" onChange="categoryContentChanged" />
+    <field id="focusPercent" type="float" onChange="focusPercentChanged" />
+    <field id="listHasFocus" type="bool" onChange="focusPercentChanged" />
+</interface>
+
+<script type="text/brightscript" uri="pkg:/components/HomeScreen/CategoryList/CategoryListItem.brs" />
+
+<children>
+    <Poster
+        id="categoryBar"
+        translation="[9, 27]"
+        width="6"
+        height="39"
+        uri="pkg:/images/home_screen_category_bar.png"
+        visible="false" />
+
+    <Label
+        id="categoryNameHelp"
+        translation="[36, 27]"
+        height="42"
+        color="0xf1f1f1ff"
+        maxLines="1"
+        ellipsisText="..."
+        horizAlign="left"
+        vertAlign="center"
+        visible="false">
+            <Font
+                role="font"
+                size="42"
+                uri="pkg:/fonts/Roboto-Regular.ttf" />
+    </Label>
+
+    <ScrollingLabel
+        id="categoryName"
+        translation="[36, 27]"
+        height="42"
+        color="0xf1f1f1ff"
+        repeatCount="0"
+        horizAlign="left"
+        vertAlign="center">
+            <Font
+                role="font"
+                size="42"
+                uri="pkg:/fonts/Roboto-Regular.ttf" />
+    </ScrollingLabel>
+
+    <Label
+        id="contentTotal"
+        translation="[36, 81]"
+        width="237"
+        height="27"
+        color="0xf1f1f1ff"
+        horizAlign="left"
+        vertAlign="center"
+        visible="false">
+            <Font
+                role="font"
+                size="27"
+                uri="pkg:/fonts/Roboto-Regular.ttf" />
+    </Label>
+
+    <Poster
+        id="categoryStatus"
+        width="27"
+        height="24"
+        uri="pkg:/images/channel_living_gif.gif"
+        visible="false"/>
+</children>
+
+</component>

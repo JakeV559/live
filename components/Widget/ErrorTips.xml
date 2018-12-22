@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ErrorTips" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+        <field id="errorType" type="string" />
+        <field id="errorContent" type="string" />
+        <field id="retryHomeRequestType" type="Boolean" />
+        <field id="retryPlayRequestType" type="Boolean" />
+        <field id="nextChannelRequestType" type="Boolean" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/Widget/ErrorTips.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+
+    <children>
+        <RectAngle opacity="1" color = "0x000000f2">
+            <Label id="errorLabel" height="0" width="1032" color ="0xf1f1f1ff"
+                horizAlign="center" vertAlign="center"
+                numLines = "2"
+                wrap = "true">
+                <Font role="font" size="39" uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+
+            <ButtonGroup id="errorButtonGroup" translation="[800,325]"
+            horizAlignment = "center"
+            itemSpacings = "[200]"
+            focusFootprintBitmapUri = "pkg:/images/Error_Button_UnSelect.png"
+            focusBitmapUri = "pkg:/images/Error_Button_Select.png"
+            iconUri =""
+            focusedIconUri =""/>
+
+            <Poster id = "errorRetryPoster" translation="[810,512]" width = "300" height ="90" >
+                <Label id = "errorRetryLabel" width = "300" height ="90" color ="0xf1f1f1ff" horizAlign="center" vertAlign="center" text = "Refresh">
+                    <Font role="font" size="40" uri="pkg:/fonts/Roboto-Regular.ttf" />
+                </Label>
+            </Poster>
+
+            <Poster id = "nextChannelPoster" width = "300" height ="90" >
+                <Label id = "errorRetryLabel" width = "300" height ="90" color ="0xf1f1f1ff" horizAlign="center" vertAlign="center" text = "Next Channel" >
+                    <Font role="font" size="40" uri="pkg:/fonts/Roboto-Regular.ttf" />
+                </Label>
+            </Poster>
+        </RectAngle>
+    </children>
+</component>

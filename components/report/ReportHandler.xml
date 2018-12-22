@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ReportHandler" extends="Task"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <script type="text/brightscript" uri="pkg:/components/common/DeviceInfo.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/AppInfo.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/http/HttpManager.brs" />
+    <script type="text/brightscript" uri="pkg:/components/report/ReportHandler.brs" />
+
+    <interface>
+        <field type="assocarray" id="report"/>
+        <!-- support method name -->
+        <field type="string" id="env" value="env"/>
+        <field type="string" id="er" value="er"/>
+        <field type="string" id="pl" value="pl"/>
+        <field type="integer" id="afterUriRequest" alwaysNotify="true"/>
+    </interface>
+</component>

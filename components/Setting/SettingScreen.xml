@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SettingScreen" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+     <script type="text/brightscript" uri="pkg:/components/Setting/SettingScreen.brs" />
+
+    <interface>
+        <field id="settingType" type="string" />
+        <field id="scrollableTextString" type="string" />
+        <field id="SettingScreenContentString" type="string" />
+    </interface>
+
+    <children>
+        <Rectangle opacity="1" width="1920" height="1080"
+            color="0x000000ff" translation="[0,0]">
+             <Label id="settingLabel" width="633" height="42" translation="[255,102]" color="0xF1F1F1FF"
+                text="Privacy Policy &amp; Terms of Service" >
+                <Font role="font" size="42"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+
+            <!--<Rectangle id = "rectLine" translation="[258,165]" opacity="0.43" width="1407" height="2" color="0xD8D8D8FF" />
+
+            <Label id="privateInfoLabel" width="552" height="56" translation="[255,357]" color="0xF1F1F1FF"
+            text = "To Live's Privacy Policy , go to :" >
+                <Font role="font" size="30"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+            <Label id="privateUriLabel" width="552" height="56"
+                translation="[255,411]" color="0xF1F1F1FF">
+                <Font role="font" size="72"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+
+            <Label id="termsInfoLabel" width="552" height="56"
+                translation="[255,551]" color="0xF1F1F1FF"
+                text = "To Live's Terms of Service , go to :">
+                <Font role="font" size="30"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+            <Label id="termsUriLabel" width="552" height="56"
+                translation="[255,609]" color="0xF1F1F1FF">
+                <Font role="font" size="72"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label> -->
+        </Rectangle>
+    </children>
+</component>

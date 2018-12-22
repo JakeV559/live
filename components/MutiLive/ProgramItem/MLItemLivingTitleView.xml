@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLItemLivingTitleView" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <!-- living icon -->
+    <script type="text/brightscript"
+        uri="pkg:/components/MutiLive/ProgramItem/MLItemLivingTitleView.brs" />
+
+    <children>
+        <Poster id="MutilLiveTitleLivingPosterMainPoster" width="87"
+            height="42" loadDisplayMode="scaleToFill"
+            uri="pkg:/images/MutilLive_TitleIcon.png">
+            <Poster width="12" height="12" translation="[9,15]"
+                loadDisplayMode="scaleToFit"
+                uri="pkg:/images/MutilLiveTitleLivingIcon.png" />
+
+            <Label id="MutilLiveTitleLivingPosterLabel" width="63"
+                height="42" translation="[21,0]" horizAlign="center"
+                vertAlign="center" color="0xF1F1F1FF">
+                <Font role="font" size="27"
+                    uri="pkg:/fonts/Roboto-Light.ttf" />
+            </Label>
+        </Poster>
+    </children>
+</component>

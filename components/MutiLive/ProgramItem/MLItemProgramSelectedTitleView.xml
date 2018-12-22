@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MLItemProgramSelectedTitleView" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <children>
+        <Poster width="348" height="57" uri="pkg:/images/home_screen_channel_des_focused_bg.png">
+            <ScrollingLabel id="mlItemProgramSelecteLabel"
+                translation="[12,12]" maxWidth="324" height="0"
+                horizAlign="left" vertAlign="center" repeatCount="-1"
+                color="0xFFFFFFFF">
+                <Font role="font" size="27"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </ScrollingLabel>
+        </Poster>
+
+        <Poster id ="mlItemProgramSelectePoster" translation="[254,10]" width="82" height="33"
+            opacity="0.7"
+            uri="pkg:/images/home_screen_channel_level_bg.9.png">
+            <Label id="mlItemProgramSelecteSubLabelHelp" translation="[12, 0]"
+                height="33" color="0xffffffff" horizAlign="center"
+                vertAlign="center" visible="false">
+                <Font role="font" size="24"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+            <Label id="mlItemProgramSelecteSubLabel"
+                translation="[12,0]" width="58" height="33" color="0xFFFFFFFF"
+                horizAlign="center" vertAlign="center" opacity="1.0">
+                <Font role="font" size="24"
+                    uri="pkg:/fonts/Roboto-Light.ttf" />
+            </Label>
+        </Poster>
+    </children>
+</component>

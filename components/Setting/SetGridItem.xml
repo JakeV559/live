@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SetGridItem" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <interface>
+        <field id="setName" type="string" alias="SetGridItemLabel.text" />
+        <field id="setUri" type="string" />
+        <field id="itemContent" type="node" onChange="itemContentChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/Setting/SetGridItem.brs" />
+    <children>
+        <Poster id="SetGridItemPost" width="489" height="273" opacity = "0.5" uri="pkg:/images/Setting_gridItem_unselect.png" >
+            <Poster id="SetGridIconPost" translation="[192,63]"
+                width="102" height="102" loadDisplayMode="scaleToFit"/>
+            <Label id="SetGridItemLabel" translation="[0,183]"
+                width="489" height="50" horizAlign="center" >
+                <Font role="font" size="24" uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+        </Poster>
+    </children>
+</component>

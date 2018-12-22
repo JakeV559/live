@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SetData" extends="ContentNode" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+        <field id = "setId" type ="string" />
+        <field id = "name" type ="string" />
+        <field id = "selectBackgroundUri" type ="string" />
+        <field id = "unselectBackgroundUri" type ="string" />
+        <field id = "selectUri" type ="string" />
+        <field id = "unselectUri" type ="string" />
+        <field id = "focusFlag" type ="Boolean" />
+    </interface>
+</component>

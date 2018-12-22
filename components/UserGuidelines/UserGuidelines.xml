@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="UserGuidelines" extends="Group" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+        <field type="uri" id="tipPoster" alias="tipPoster.URI"/>
+        <field type="string" id="tipText" alias="tipLabel.text"/>
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/UserGuidelines/UserGuidelines.brs"/>
+    <children>
+        <Poster id="tipPoster" width="270.0" height="319">
+        </Poster>
+        <Label id="tipLabel"
+                width = "510"
+                height="0"
+                translation="[-120.0,270.0]"
+                numLines="2"
+                wrap="true"
+                horizAlign="center"
+                color="0xC2C2C2FF">
+                <Font role = "font" uri = "pkg:/fonts/Roboto-Regular.ttf" size = "36" />
+                </Label>
+    </children>
+</component>

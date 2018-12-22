@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Toast" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+    <!-- Use Tips
+    1.set showTime and showText
+    2.showTime:time senconds for show
+    3.showText:text for show
+     -->
+        <field id="showTime" type="String" />
+        <field id="showText" type="String" alias="toastLable.text" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/Widget/Toast.brs" />
+
+    <children>
+        <Poster id="toastPoster" width="1980"
+            height="100" uri ="pkg:/images/toast_bg.9.png" >
+            <Label id="toastLable" width="1980" height="100"
+                horizAlign="center" vertAlign="center">
+                <Font role="font" size="39"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+            </Label>
+        </Poster>
+
+        <Timer id="toastTimer" repeat="false" duration="3" />
+    </children>
+</component>

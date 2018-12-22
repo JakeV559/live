@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="UriHandler" extends="Task">
+    <interface>
+        <!-- Field to issue a request to the handler -->
+        <field id="request" type="assocarray" />
+        <!-- Contains the response content -->
+        <field id="content" type="node" />
+        <!-- Contains the response content of home page -->
+        <field id="homeContent" type="node" />
+        <!-- Contains the response content of mutiLive page -->
+        <field id="mutiLiveContent" type="node" />
+        <!-- # of requests that have bad/no content -->
+        <field id="numBadRequests" type="integer" value="0" />
+        <!-- Contains the response content of video -->
+        <field id="videoSchedule" type="string" />
+        <!-- network error -->
+        <field id="networkError" type="string" />
+        <field id="afterRequest" type="integer" alwaysNotify="true" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/http/UriHandler.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/GeneralUtils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/report/ReportManager.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/DeviceInfo.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+</component>

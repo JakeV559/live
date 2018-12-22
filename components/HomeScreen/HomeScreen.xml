@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HomeScreen" extends="Group">
+
+<script type="text/brightscript" uri="pkg:/components/HomeScreen/HomeScreen.brs" />
+<script type="text/brightscript" uri="pkg:/components/common/SGHelperFunctions.brs" />
+<script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+
+<interface>
+    <field id="content" type="node" />
+    <field id="channelSelected" type="node" />
+    <field id="curChannelPlaying" type="node" />
+    <field id="preChannelPlaying" type="node" />
+    <field id="settingItemSelected" type="string" />
+    <field id="settingShowFlag" type="string" />
+</interface>
+
+<children>
+    <Rectangle
+        width="1920"
+        height="1080"
+        color="0x00000088">
+    </Rectangle>
+
+    <Rectangle
+        width="360"
+        height="1080"
+        color="0x00000088">
+        <Poster
+                id="ProductLogo"
+                translation="[36, 93]"
+                width="159"
+                height="45"
+                uri="pkg:/images/product_logo.png"
+                loadDisplayMode="scaleToFit"/>
+
+        <MarkupList
+            id="CategoryList"
+            translation="[0, 198]"
+            itemComponentName="CategoryListItem"
+            itemSize="[360, 129]"
+            itemSpacing="[0, 6]"
+            focusFootprintBlendColor="0x00000088"
+            focusFootprintBitmapUri="pkg:/images/home_screen_category_unfocused_bg.png"
+            focusBitmapUri="pkg:/images/home_screen_category_focused_bg.png"
+            wrapDividerBitmapUri="pkg:/images/home_screen_category_divider.png"
+            wrapDividerHeight="0"
+            vertFocusAnimationStyle="fixedFocusWrap" />
+    </Rectangle>
+
+    <Overhang
+        id="SystemTime"
+        translation="[168, 0]"
+        height="135"
+        backgroundUri="pkg:/images/home_screen_overhang_bg.png"
+        logoBaselineOffset="-135"
+        clockColor="0xffffffff">
+     </Overhang>
+
+    <MarkupGrid
+        id="ChannelGrid"
+        translation="[378, 132]"
+        itemComponentName="ChannelGridItem"
+        itemSize="[501, 282]"
+        itemSpacing="[9, 9]"
+        numColumns="3"
+        numRows="4"
+        fixedLayout="true"
+        focusBitmapUri="pkg:/images/home_screen_indicator_bitmap.9.png"
+        vertFocusAnimationStyle="fixedFocus" />
+
+     <MarkupGrid
+        id="SetGrid"
+        translation="[378, 132]"
+        itemComponentName="SetGridItem"
+        itemSize="[489, 273]"
+        itemSpacing="[12,12]"
+        rowHeights="[273, 273]"
+        columnWidths="[489,489,489]"
+        numColumns="2"
+        numRows="4"
+        focusBitmapUri="pkg:/images/home_screen_indicator_bitmap.9.png"
+        visible="false"/>
+</children>
+
+</component>

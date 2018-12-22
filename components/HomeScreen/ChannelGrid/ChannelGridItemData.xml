@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ChannelGridItemData" extends="ContentNode">
+
+<interface>
+    <field id="channelRecommend" type="boolean" />
+    <field id="channelPosterWidth" type="float" />
+    <field id="channelPosterHeight" type="float" />
+    <field id="channelFocused" type="boolean" />
+    <field id="categoryId" type="string" />
+    <field id="categoryIndex" type="integer" />
+    <field id="channelId" type="string" />
+    <field id="channelName" type="string" />
+    <field id="channelPic" type="string" />
+    <field id="isPay" type="string" />
+    <field id="channelType" type="string" />
+    <field id="splatId" type="string" />
+    <field id="curProgram" type="assocarray" />
+    <field id="nextProgram" type="assocarray" />
+    <field id="channelStreams" type="array" />
+    <field id="channelEname" type="string" />
+    <field id="signal" type="string" />
+    <field id="channelClass" type="string" />
+    <field id="numericKeys" type="string" />
+    <field id="selfCopyRight" type="string" />
+    <field id="isArtificialRecommend" type="string" />
+    <field id="orderNo" type="string" />
+    <field id="haveProducts" type="string" />
+    <field id="is3D" type="string" />
+    <field id="is4K" type="string" />
+    <field id="childLock" type="string" />
+    <field id="isTimeShiftingDisabled" type="string" />
+    <field id="isSupportPushVideo" type="bool" />
+    <field id="isAnchor" type="integer" />
+</interface>
+
+</component>

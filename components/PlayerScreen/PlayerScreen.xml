@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="PlayerScreen" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+    <interface>
+        <field id="settingFlag" type="Boolean" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/PlayerScreen/PlayerScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/SGHelperFunctions.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/DeviceInfo.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/TimeUtils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/GeneralUtils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+    <script type="text/brightscript" uri="pkg:/components/http/HttpManager.brs" />
+    <script type="text/brightscript" uri="pkg:/components/report/ReportManager.brs" />
+    <children>
+        <Video id="Video" translation="[0,0]" enableUI="false" />
+
+        <PlayerController id="PlayerController" />
+
+        <LoadingIndicator id="RetrievingBar" imageUri="pkg:/images/loader.png"
+            backgroundColor="0x000000" imageWidth="100" fadeInterval="0.2"
+            text="Loading..." />
+        <HomeScreen id="HomeScreen" visible="false" />
+
+        <!-- Show loading indicator only the player is not playing after 1.5 seconds. -->
+        <Timer id="LoadingDelayTimer" duration="1.5" repeat="false" />
+        <!-- default duration 5s -->
+        <Timer id="ControllerTimer" duration="5" repeat="false" />
+        <Timer id="SeekBarUpdateTimer" />
+        <Timer id="HeartTimer" repeat="false"/>
+
+        <MLMutiLive id="MLMutiLiveMainView" translation="[0,1080]" />
+        <Timer id="MutiLiveOprationTimer" duration="1" repeat="true" />
+
+        <Animation id="ShowBar" repeat="false" duration=".2"
+            easeFunction="linear">
+            <Vector2DFieldInterpolator
+                fieldToInterp="MLMutiLiveMainView.translation" key="[0,1]"
+                keyValue="[[0,1080],[0,180]]" />
+        </Animation>
+        <Animation id="HideBar" repeat="false" duration=".2"
+            easeFunction="linear">
+            <Vector2DFieldInterpolator
+                fieldToInterp="MLMutiLiveMainView.translation" key="[0,1]"
+                keyValue="[[0,180],[0,1080]]" />
+        </Animation>
+
+        <LogoutScreen id="LogoutScreen" visible="false" />
+
+        <!-- user guidelines -->
+        <Timer id="userChangeChannelGuidelinesTimer" repeat="false" duration="30"></Timer>
+        <Timer id="userNeedDownKeyGuidelinesTimer" repeat="false" duration="60"></Timer>
+        <Timer id="userChangeChannelGuidelinesSecondTimer" repeat="false" duration="1800"></Timer>
+        <Timer id="changeChannelTipPosterDisappearTimer" repeat="false" duration="7"/>
+        <Timer id="downKeyTipPosterDisappearTimer" repeat="false" duration="7"></Timer>
+        <UserGuidelines id="changeChannelTipPoster" translation="[1434.0,602.0]" tipPoster="pkg:/images/user_guidelinesleft_right.png" visible="false" tipText="Press the left and right button to quickly switch channels"></UserGuidelines>
+        <UserGuidelines id="downKeyTipPoster" translation="[1434.0,602.0]" tipPoster="pkg:/images/user_guidelines_downkey.png" visible="false" tipText="Press the down button to view program list"></UserGuidelines>
+
+        <SettingScreen id="SettingScreen" visible = "false"/>
+
+        <ErrorTips id = "ErrorTips" visible = "false"/>
+        <Toast id = "mutiliveToast" visible = "false"/>
+    </children>
+</component>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="LogoutScreen" extends="Group"
+    xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+<interface>
+    <field id="likeChannelContent" type="node" />
+    <field id="channelSelected" type="node" />
+    <field id="preChannelFocused" type="node" />
+</interface>
+
+<script type="text/brightscript" uri="pkg:/components/LogoutScreen/LogoutScreen.brs" />
+<script type="text/brightscript" uri="pkg:/components/common/utils.brs" />
+
+<children>
+    <Rectangle
+        width="1920"
+        height="1080"
+        color="0x000000f2">
+
+        <Label
+            id="likeTitle"
+            translation="[174, 186]"
+            width="336"
+            height="48"
+            color="0xf1f1f1ff"
+            text="You may also like">
+                <Font
+                    role="font"
+                    size="39"
+                    uri="pkg:/fonts/Roboto-Regular.ttf" />
+        </Label>
+
+        <MarkupGrid
+            id="likeList"
+            translation="[174, 282]"
+            itemComponentName="LikeListItem"
+            itemSize="[519, 291]"
+            itemSpacing="[9, 0]"
+            numRows="1"
+            numColumns="3"
+            horizFocusAnimationStyle="floatingFocus"
+            focusBitmapUri="pkg:/images/home_screen_indicator_bitmap.9.png" />
+
+        <!-- Exit -->
+        <Poster
+            id="exitBtn"
+            translation="[810, 696]"
+            width="300"
+            height="90">
+                <Label
+                    translation="[117, 26]"
+                    width="69"
+                    height="39"
+                    color="0xffffffff"
+                    horizAlign="center"
+                    vertAlign="center"
+                    text="Exit">
+                        <Font
+                            role="font"
+                            size="39"
+                            uri="pkg:/fonts/Roboto-Regular.ttf" />
+                    </Label>
+            </Poster>
+    </Rectangle>
+</children>
+</component>
